@@ -1,7 +1,7 @@
 public class PersonBuilder {
     private String name;
     private String surname;
-    private int age;
+    private int age = -1;
     private String address;
 
     public PersonBuilder setName(String name) {
@@ -32,10 +32,13 @@ public class PersonBuilder {
         if (name == null || surname == null) {
             throw new IllegalStateException("Не задано имя и/или фамилия человека");
         }
-        Person person = new Person(this.name, this.surname);
-        person.age = this.age;
-        person.address = this.address;
-
+        Person person;
+        if (this.age != -1){
+            person = new Person(this.name, this.surname, this.age);
+        } else {
+            person = new Person(this.name, this.surname);
+            person.address = this.address;
+        }
         return person;
     }
 }

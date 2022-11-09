@@ -4,15 +4,15 @@ public class Main {
         Person mom = new PersonBuilder()
                 .setName("Анна")
                 .setSurname("Вольф")
-                .setAge(29)
                 .setAddress("Сидней")
                 .build();
-        mom.happyBirthday();
+        System.out.println(mom.hasAge());
 
         Person son = mom.newChildBuilder()
                 .setName("Антошка")
                 .build();
         son.happyBirthday();
+
         System.out.println("У " + mom + " есть сын, " + son);
 
         try {

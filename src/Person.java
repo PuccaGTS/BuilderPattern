@@ -4,7 +4,7 @@ import java.util.OptionalInt;
 public class Person {
     protected final String name;
     protected final String surname;
-    protected int age;
+    private int age = -1;
     protected String address;
 
     public Person(String name, String surname) {
@@ -19,7 +19,7 @@ public class Person {
     }
 
     public boolean hasAge() {
-        return age != 0;
+        return age != -1;
     }
 
     public boolean hasAddress() {
