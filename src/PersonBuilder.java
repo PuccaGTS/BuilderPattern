@@ -35,6 +35,7 @@ public class PersonBuilder {
         Person person;
         if (this.age != -1){
             person = new Person(this.name, this.surname, this.age);
+            person.address = this.address;
         } else {
             person = new Person(this.name, this.surname);
             person.address = this.address;
